@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import SplashScreen from 'react-native-splash-screen'
 import { persist } from '../../index'
 
 class Landing extends PureComponent {
@@ -9,6 +10,7 @@ class Landing extends PureComponent {
     init = () => {
         this.props.navigation.navigate('Main')
         // splash come off
+        SplashScreen.hide()
     }
 
     render() {

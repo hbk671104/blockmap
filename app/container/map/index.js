@@ -13,7 +13,7 @@ class Map extends PureComponent {
 
     componentDidMount() {
         this.props.dispatch({ type: 'exchange/fetch' })
-        // this.getCurrentPosition()
+        this.getCurrentPosition()
     }
 
     getCurrentPosition = () => {
