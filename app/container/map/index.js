@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import R from 'ramda'
+import MapView from 'react-native-maps'
 
 import styles from './style'
 
@@ -16,11 +16,7 @@ class Map extends PureComponent {
     }
 
     render() {
-        return (
-            <View>
-                <Text>张嘿嘿</Text>
-            </View>
-        )
+        return <MapView style={styles.container} />
     }
 }
 

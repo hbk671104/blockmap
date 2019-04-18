@@ -24,7 +24,7 @@ const dvaInit = options => {
 }
 
 import Router from './router'
-import exchangeModel from './model/exchange'
+import exchangeModel from 'model/exchange'
 import { name as appName } from '../app.json'
 
 const app = dvaInit({
