@@ -1,16 +1,11 @@
-import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
+import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import Map from './container/map'
+import Exchange from './container/exchange'
+import Country from './container/country'
 
-// const MainNavigator = createStackNavigator({
-//     DeviceList,
-//     DeviceDetail
-// })
+const AppNavigator = createStackNavigator({
+    Map
+})
 
-// const AppNavigator = createSwitchNavigator({
-//     Landing,
-//     Login,
-//     Main: MainNavigator
-// })
-
-export default Map
+export default createAppContainer(AppNavigator)

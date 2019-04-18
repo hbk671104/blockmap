@@ -6,13 +6,9 @@ import R from 'ramda'
 import styles from './style'
 
 class Map extends PureComponent {
-    // static navigationOptions = ({ navigation }) => {
-    //     const data = navigation.getParam('data', {})
-    //     const id = R.pathOr(0, ['id'])(data)
-    //     return {
-    //         title: `设备${id}`
-    //     }
-    // }
+    static navigationOptions = {
+        title: 'Blockchain World Map'
+    }
 
     componentDidMount() {
         // const { data } = this.props
