@@ -1,20 +1,16 @@
-import { human } from 'react-native-typography'
+import { human, iOSColors } from 'react-native-typography'
 
 export default {
     container: {
         flex: 1
     },
-    contentContainer: {
-        paddingVertical: 12
-    },
-    group: {
-        title: {
-            container: {
-                paddingHorizontal: 12
-            },
-            text: {
-                ...human.calloutObject
-            }
+    pinColor: number => {
+        if (number >= 20) {
+            return iOSColors.red
         }
+        if (number >= 10) {
+            return iOSColors.orange
+        }
+        return iOSColors.green
     }
 }
