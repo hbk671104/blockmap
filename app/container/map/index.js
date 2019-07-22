@@ -44,6 +44,9 @@ class Map extends PureComponent {
             R.path([c]),
             R.length
         )(data)
+        if (R.isEmpty(obj)) {
+            return null
+        }
         return (
             <Marker
                 key={JSON.stringify(obj)}
