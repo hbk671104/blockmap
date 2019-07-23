@@ -265,6 +265,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNScreens;
 		};
+		404EA8EB22E5EA52002766A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B465546DACC422EB3E92370 /* RNScreens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A4F220C6379000FFB8D;
+			remoteInfo = "RNScreens-tvOS";
+		};
 		408AE2A72268C4D5007082FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -589,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				4037BBD8226981E100E615E6 /* libRNScreens.a */,
+				404EA8EC22E5EA52002766A0 /* libRNScreens-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1107,6 +1115,13 @@
 			fileType = archive.ar;
 			path = libRNScreens.a;
 			remoteRef = 4037BBD7226981E100E615E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		404EA8EC22E5EA52002766A0 /* libRNScreens-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNScreens-tvOS.a";
+			remoteRef = 404EA8EB22E5EA52002766A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		408AE2A82268C4D5007082FF /* libjsi.a */ = {
