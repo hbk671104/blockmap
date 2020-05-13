@@ -8,42 +8,23 @@ import styles from './style'
 
 class Map extends PureComponent {
     static navigationOptions = {
-        title: 'Blockchain World Map'
+        title: 'Blockchain World Map',
     }
 
     componentDidMount() {
         this.props.dispatch({ type: 'exchange/fetch' })
-        // this.getCurrentPosition()
     }
 
-    getCurrentPosition = () => {
-        try {
-            navigator.geolocation.getCurrentPosition(position => {
-                this.map.animateCamera({
-                    center: {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
-                    }
-                })
-            })
-        } catch (e) {
-            alert(e.message || '')
-        }
-    }
-
-    goToExchange = country => () => {
+    goToExchange = (country) => () => {
         this.props.navigation.navigate('Exchange', {
-            country
+            country,
         })
     }
 
-    renderMarker = c => {
+    renderMarker = (c) => {
         const { data } = this.props
         const obj = R.pathOr({}, [c])(coordinate)
-        const number_of_exchange = R.pipe(
-            R.path([c]),
-            R.length
-        )(data)
+        const number_of_exchange = R.pipe(R.path([c]), R.length)(data)
         if (R.isEmpty(obj)) {
             return null
         }
@@ -56,7 +37,7 @@ class Map extends PureComponent {
                 }`}
                 coordinate={{
                     longitude: obj.lng,
-                    latitude: obj.lat
+                    latitude: obj.lat,
                 }}
                 pinColor={styles.pinColor(number_of_exchange)}
                 onCalloutPress={this.goToExchange(c)}
@@ -68,21 +49,18 @@ class Map extends PureComponent {
         const { data } = this.props
         return (
             <MapView
-                ref={map => {
+                ref={(map) => {
                     this.map = map
                 }}
                 style={styles.container}
                 showsUserLocation
             >
-                {R.pipe(
-                    R.keys,
-                    R.map(this.renderMarker)
-                )(data)}
+                {R.pipe(R.keys, R.map(this.renderMarker))(data)}
             </MapView>
         )
     }
 }
 
 export default connect(({ exchange }) => ({
-    data: R.pathOr({}, ['data'])(exchange)
+    data: R.pathOr({}, ['data'])(exchange),
 }))(Map)
